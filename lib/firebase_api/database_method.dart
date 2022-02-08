@@ -52,11 +52,8 @@ class DataBaseMethod {
           )
           .get());
 
-      for (int i = 0; i < _response.docs.length; i++) {
-        mapResult = _response.docs[i].data() as Map<String, dynamic>;
-
-        mapResult["toDoDocId"] = _response.docs[i].id;
-        ToDoItemModel object = ToDoItemModel.fromMap(mapResult);
+      for (var element in _response.docs) {
+        ToDoItemModel object = ToDoItemModel.fromMap(element);
         todolistmodel.add(object);
       }
     } catch (e) {
