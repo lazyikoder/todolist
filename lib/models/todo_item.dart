@@ -7,11 +7,11 @@ class ToDoItemModel {
     required this.isDone,
     required this.toDoDocId,
   });
-  factory ToDoItemModel.fromMap(Map<String, dynamic> map) {
+  factory ToDoItemModel.fromMap(QueryDocumentSnapshot map) {
     return ToDoItemModel(
       message: map["message"],
       isDone: map["isdone"],
-      toDoDocId: map["toDoDocId"],
+      toDoDocId: map.id,
     );
   }
 }
